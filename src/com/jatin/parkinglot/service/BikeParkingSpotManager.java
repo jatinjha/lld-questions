@@ -5,18 +5,22 @@ import com.jatin.parkinglot.model.ParkingSpot;
 import com.jatin.parkinglot.model.Vehicle;
 import com.jatin.parkinglot.service.stategy.ParkingStrategy;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
 public class BikeParkingSpotManager implements ParkingSpotManager{
 
-    private final List<ParkingSpot> parkingSpotList;
+    private List<ParkingSpot> parkingSpotList;
     private ParkingStrategy parkingStrategy;
 
-    public BikeParkingSpotManager(List<ParkingSpot> parkingSpotList , ParkingStrategy parkingStrategy){
-        this.parkingSpotList = parkingSpotList;
+    public BikeParkingSpotManager(ParkingStrategy parkingStrategy){
         this.parkingStrategy = parkingStrategy;
+        this.parkingSpotList = new ArrayList<>();
+        for(int i=0 ;i<4 ; i++){
+            this.addParkingSpot();
+        }
     }
 
     @Override
@@ -27,9 +31,10 @@ public class BikeParkingSpotManager implements ParkingSpotManager{
 
     @Override
     public void addParkingSpot() {
-        String parkId = UUID.randomUUID().toString();
-        parkingSpotList.add(new BikeParkingSpot(parkId));
-        parkingStrategy.addParkingSpot(parkId);
+        BikeParkingSpot bikeParkingSpot = new BikeParkingSpot();
+        bikeParkingSpot.setSpotAvailable(true);
+        parkingSpotList.add(bikeParkingSpot);
+        parkingStrategy.addParkingSpot(bikeParkingSpot);
     }
 
     @Override

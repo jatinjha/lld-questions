@@ -2,15 +2,19 @@ package com.jatin.parkinglot.model;
 
 import com.jatin.parkinglot.enums.PARKING_SPOT_TYPE;
 
+import java.util.UUID;
+
 public class ParkingSpot {
     String parkingSpotId;
     Boolean isSpotAvailable;
     Vehicle vehicle;
     PARKING_SPOT_TYPE parkingSpotType;
+    double parkingPrice;
 
-    public ParkingSpot(String parkingSpotId , PARKING_SPOT_TYPE parkingSpotType) {
-        this.parkingSpotId = parkingSpotId;
+    public ParkingSpot(PARKING_SPOT_TYPE parkingSpotType,double parkingPrice) {
+        this.parkingSpotId = UUID.randomUUID().toString();
         this.parkingSpotType = parkingSpotType;
+        this.parkingPrice = parkingPrice;
     }
 
     public Boolean getSpotAvailable() {
@@ -48,4 +52,7 @@ public class ParkingSpot {
         return parkingSpotType;
     }
 
+    public double getParkingPrice() {
+        return parkingPrice;
+    }
 }
