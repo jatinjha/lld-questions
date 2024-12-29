@@ -9,6 +9,7 @@ public class CardParkingSpot extends ParkingSpot{
     double perHourPrice;
     public CardParkingSpot() {
         super(PARKING_SPOT_TYPE.CarParking,20d);
+        this.perHourPrice = 30d;
     }
 
     public double getPerHourPrice(){

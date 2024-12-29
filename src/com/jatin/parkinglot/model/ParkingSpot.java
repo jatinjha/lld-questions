@@ -53,6 +53,6 @@ public class ParkingSpot {
     }
 
     public double getParkingPrice() {
-        return parkingPrice;
+        return this.parkingPrice;
     }
 }

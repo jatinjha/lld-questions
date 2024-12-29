@@ -13,11 +13,10 @@ public class ExitGate {
         this.paymentStrategy = paymentStrategy;
     }
 
-    public double getCostOfParking(ParkingTicket parkingTicket) throws Exception {
-        ParkingSpotManager parkingSpotManager = ParkingSpotManagerFactory.getParkingSpotManager(parkingTicket.getVehicle().vehicleType);
+    public double getCostOfParking(ParkingTicket parkingTicket,ParkingSpotManager parkingSpotManager) throws Exception {
         parkingSpotManager.removeAVehicle(parkingTicket.getParkingSpot());
         ParkingSpot parkingSpot = parkingTicket.getParkingSpot();
-        return paymentStrategy.getParkingPrice(parkingSpot.getParkingPrice(),parkingTicket.getParkingDuration());
+        return paymentStrategy.getParkingPrice(parkingSpot.getParkingPrice(),parkingTicket.getParkingDuration()+3l);
     }
 
 }

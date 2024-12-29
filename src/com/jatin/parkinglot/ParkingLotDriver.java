@@ -31,8 +31,8 @@ public class ParkingLotDriver {
             entranceGate.generateParkingTicket(bike1,bikeParkingSpotManager);
 
             ExitGate exitGate = new ExitGate(1,new HourlyPaymentStrategy());
-            System.out.println("cost of parking car 1 : "+exitGate.getCostOfParking(car1ParkingTicket));
-            System.out.println("cost of parking car 2 : "+exitGate.getCostOfParking(car1ParkingTicket));
+            System.out.println("cost of parking car 1 : "+exitGate.getCostOfParking(car1ParkingTicket,carParkingSpotManager));
+            System.out.println("cost of parking car 2 : "+exitGate.getCostOfParking(car2ParkingTicket,carParkingSpotManager));
 
             ParkingTicket car3ParkingTicket = entranceGate.generateParkingTicket(car3,carParkingSpotManager);
 

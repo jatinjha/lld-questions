@@ -21,6 +21,7 @@ public class CarParkingSpotManager implements ParkingSpotManager{
             this.addParkingSpot();
         }
     }
+
     @Override
     public Optional<ParkingSpot> findParkingSpot() {
         String nextAvailableSpot = parkingStrategy.findParkingSpotId();
