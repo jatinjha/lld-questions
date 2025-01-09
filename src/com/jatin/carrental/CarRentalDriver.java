@@ -1,5 +1,6 @@
 package com.jatin.carrental;
 
+import com.jatin.carrental.enums.ReservationStatus;
 import com.jatin.carrental.enums.VehicleType;
 import com.jatin.carrental.factory.PaymentFactory;
 import com.jatin.carrental.models.*;
@@ -68,6 +69,7 @@ public class CarRentalDriver {
             return;
         }
 
+        reservationByUserOne.get().setReservationStatus(ReservationStatus.COMPLETED);
         PaymentManagementService paymentManagementService = new PaymentManagementService();
         paymentManagementService.doPayment(reservationByUserOne.get(), PaymentFactory.getPaymentMode("COD"));
 
