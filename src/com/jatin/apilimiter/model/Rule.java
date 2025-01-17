@@ -4,10 +4,12 @@ import java.util.UUID;
 
 public class Rule {
     String id;
-    double ruleValue;
+    long refillRate;
+    int allowedRequestValue;
 
-    public Rule(double ruleValue) {
-        this.ruleValue = ruleValue;
+    public Rule(long refillRate, int allowedRequestValue) {
+        this.refillRate = refillRate;
+        this.allowedRequestValue = allowedRequestValue;
         this.id = UUID.randomUUID().toString();
     }
 
@@ -15,7 +17,11 @@ public class Rule {
         return id;
     }
 
-    public double getRuleValue() {
-        return ruleValue;
+    public long getRefillRate() {
+        return refillRate;
+    }
+
+    public int getAllowedRequestValue() {
+        return allowedRequestValue;
     }
 }

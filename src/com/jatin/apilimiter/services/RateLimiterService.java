@@ -15,11 +15,11 @@ public class RateLimiterService {
         this.ruleService = new RuleService();
     }
 
-    public Boolean checkValidRequest(Client client , Identifier identifier){
-        // validate identifer
+    public synchronized Boolean checkValidRequest(Client client , Identifier identifier){
+        System.out.println("Thread enter in rl service "+Thread.currentThread().getName());
         try {
             if (ruleService.isValidIdentifier(client, identifier)) {
-                return throttleStrategy.isRequestAllowed();
+                return throttleStrategy.isRequestAllowed(identifier.getId());
             }
 
         }catch (Exception exception){

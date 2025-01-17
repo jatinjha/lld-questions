@@ -1,5 +1,7 @@
 package com.jatin.apilimiter.strategies;
 
+import com.jatin.apilimiter.model.Rule;
+
 public class TokenBucketThrottleStrategy implements ThrottleStrategy{
 
     private final long maxBucketSize;
@@ -16,7 +18,7 @@ public class TokenBucketThrottleStrategy implements ThrottleStrategy{
 
 
     @Override
-    public Boolean isRequestAllowed(long token) {
-
+    public Boolean isRequestAllowed(String client) {
+        return null;
     }
 }

@@ -27,4 +27,13 @@ public class IdentiferService {
 
         identifierVsRules.put(identifier.getId(),rule);
     }
+
+    public Rule findRuleByClientAndIdentifier(Client client , Identifier identifier) throws Exception{
+        Map<String,Rule> identifierVsRules = clientVsIdentifierVsRules.get(client.getId());
+        if(identifierVsRules.isEmpty()){
+            throw new Exception("invalid client id");
+        }
+
+        return identifierVsRules.get(identifier.getId());
+    }
 }
