@@ -1,6 +1,6 @@
-package com.jatin.designpatterns.proxy;
+package com.jatin.designpatterns.prototype;
 
-public class Circle implements ShapeProxy{
+public class Circle implements ShapePrototype {
 
     private int radius;
     private String colour;
@@ -10,7 +10,7 @@ public class Circle implements ShapeProxy{
         this.colour = colour;
     }
     @Override
-    public ShapeProxy clone() {
+    public ShapePrototype clone() {
         return new Circle(this.radius,this.colour);
     }
 

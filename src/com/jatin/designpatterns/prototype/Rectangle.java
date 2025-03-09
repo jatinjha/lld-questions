@@ -1,6 +1,6 @@
-package com.jatin.designpatterns.proxy;
+package com.jatin.designpatterns.prototype;
 
-public class Rectangle implements ShapeProxy{
+public class Rectangle implements ShapePrototype {
 
     int length;
     int breadth;
@@ -10,7 +10,7 @@ public class Rectangle implements ShapeProxy{
         this.breadth = breadth;
     }
     @Override
-    public ShapeProxy clone() {
+    public ShapePrototype clone() {
         return new Rectangle(this.length,this.breadth);
     }
 }
