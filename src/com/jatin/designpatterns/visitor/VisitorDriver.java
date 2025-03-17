@@ -11,6 +11,7 @@ public class VisitorDriver {
         normalRoomElement.accept(roomPricingVisitor);
         deluxRoomElement.accept(roomPricingVisitor);
 
+
         System.out.println("value of normal room - > "+((NormalRoom)normalRoomElement).roomPrice);
         System.out.println("value of delux room - > "+((DeluxRoom)deluxRoomElement).roomPrice);
     }
