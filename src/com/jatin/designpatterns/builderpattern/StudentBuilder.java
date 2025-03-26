@@ -2,6 +2,9 @@ package com.jatin.designpatterns.builderpattern;
 
 import java.util.List;
 
+/*
+ Builder interface
+ */
 public abstract class StudentBuilder {
     int rollNumber;
     String name;

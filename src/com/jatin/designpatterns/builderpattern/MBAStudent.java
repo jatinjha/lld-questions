@@ -3,6 +3,9 @@ package com.jatin.designpatterns.builderpattern;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+concrete builder
+ */
 public class MBAStudent extends StudentBuilder {
     @Override
     public StudentBuilder setSubjects() {
